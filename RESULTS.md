@@ -32,8 +32,10 @@ Tool parts that I chose: Part 3 Robot Framework, Part 4 Cypress
 - Step 4.3, failure message for the wrong title: Timed out retrying after 10000ms, expected 'Web form' to equal 'Web Form' (- 'Web form' actual, + 'Web Form' expected)
 - Step 4.6, tool and calories in the answer of POST /api/pizza: tool Pizza cutter, calories 800
 - Step 4.7, the line of the admin list that shows your pizza: Lab Pizza 20261124-220838 (tool=Scissors, ingredients_number=5)
-- Step 4.8, run 1, result, duration and pizza name:
-- Step 4.8, run 2, result, duration and pizza name:
+- Step 4.8, run 1, result, duration and pizza name: PASS, pizza-scenario.cy.js 00:11 and web-form.cy.js 00:02, Lab Pizza 20261124-xxxxxx
+- Step 4.8, run 2, result, duration and pizza name: PASS, pizza-scenario.cy.js 00:11 and web-form.cy.js 00:04, Lab Pizza 20261124-xxxxxx
+
+Note: running both specs in one `npx cypress run --browser chrome` stopped at the start of the second spec with "Error: * is not a valid URL" from inside Cypress 16.2.1 with Chrome 158, so each spec was run on its own.
 
 ## Part B
 1.

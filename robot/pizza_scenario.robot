@@ -1,8 +1,8 @@
 *** Settings ***
-Library               DateTime
 Documentation         Test case QP-01, A custom pizza reaches the admin list.
 Resource              resources/quickpizza.resource
 Test Teardown         Close Browser
+Library               DateTime
 
 *** Test Cases ***
 QP-01 A Custom Pizza Reaches The Admin List

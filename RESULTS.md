@@ -22,13 +22,13 @@ Tool parts that I chose: Part 3 Robot Framework, Part 4 Cypress
 | 7    | "Lab Pizza 20261124-2035 (tool=Pizza cutter, ingredients_number=6)" in the list | Pass |
 
 ## Part 3: Robot Framework
-- robot --version:
-- Step 3.2, failure message for the wrong title:
-- Step 3.8, run 1, result, elapsed time and pizza name:
-- Step 3.8, run 2, result, elapsed time and pizza name:
+- robot --version: Robot Framework 7.5.1 (Python 3.12.2 on darwin)
+- Step 3.2, failure message for the wrong title: Title should have been 'Web Form' but was 'Web form'.
+- Step 3.8, run 1, result, elapsed time and pizza name: PASS, 00:00:15.828, Lab Pizza 20261124-211321
+- Step 3.8, run 2, result, elapsed time and pizza name: PASS, 00:00:16.274, Lab Pizza 20261124-211701
 
 ## Part 4: Cypress
-- node --version, npm --version and npx cypress version:
+- node --version, npm --version and npx cypress version: v24.13.0, 11.6.2, Cypress package version 16.2.1, Cypress binary version 16.2.1
 - Step 4.3, failure message for the wrong title:
 - Step 4.6, tool and calories in the answer of POST /api/pizza:
 - Step 4.7, the line of the admin list that shows your pizza:

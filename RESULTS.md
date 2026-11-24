@@ -4,7 +4,7 @@ Tool parts that I chose: Part 3 Robot Framework, Part 4 Cypress
 
 ## Part 0
 - Step 0.1, Chrome version: 158.0.8127.38 (Official Build) (arm64)
-- Step 0.3, ChromeDriver version: 
+- Step 0.3, ChromeDriver version: 158.0.8127.38
 - Step 0.4, locator of Pizza, Please!: 
 - Step 0.4, locator of Excluded tools: 
 - Step 0.4, locator of Must be vegetarian: 

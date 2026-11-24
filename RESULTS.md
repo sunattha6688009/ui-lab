@@ -9,7 +9,7 @@ Tool parts that I chose: Part 3 Robot Framework, Part 4 Cypress
 - Step 0.4, locator of Excluded tools: select
 - Step 0.4, locator of Must be vegetarian: #default-checkbox
 - Step 0.4, locator of Custom Pizza Name: input#pizza-name
-- Step 0.5, pizza name, tool and calories of the run by hand: Lab Pizza 20261124-2035, Pizza cutter, 550
+- Step 0.5, pizza name, tool and calories of the run by hand: Lab Pizza 20261124-2035, Pizza cutter, 450
 
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|

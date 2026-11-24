@@ -38,10 +38,16 @@ Tool parts that I chose: Part 3 Robot Framework, Part 4 Cypress
 Note: running both specs in one `npx cypress run --browser chrome` stopped at the start of the second spec with "Error: * is not a valid URL" from inside Cypress 16.2.1 with Chrome 158, so each spec was run on its own.
 
 ## Part B
-1.
-2.
-3.
-4.
-5.
-6.
-7.
+1. The three number boxes have the same id, `floating_filled`, so the id cannot find only one box. That is why the tests find the box by the text of its label. If each box had its own id, like `id="max-calories"`, the locator would be short and would not break when the page changes.
+
+2. It is a consistency oracle, because it checks that two parts of the same system show the same thing. It compares the tool in the recommendation with the tool in the admin list. It would find a bug where the server saves a different tool from the one the customer saw.
+
+3. The test could check that all the ingredients of the pizza are vegetarian. The page does not show this, but the answer of POST /api/pizza has a `vegetarian` value for each ingredient. In Cypress, the test can read this answer with `cy.wait('@pizza')` and check that every value is true.
+
+4. In Robot Framework I had to write `Wait Until ...` keywords, but Cypress waited by itself for up to 10 seconds. Cypress was faster to write, and one run of QP-01 took about 11 seconds, while Robot Framework took about 16 seconds (15.828 s and 16.274 s). The Robot log showed every step with screenshots, and Cypress made a video, but it stopped with "Error: * is not a valid URL" when I ran both specs together.
+
+5. I would choose Robot Framework for Project 2. First, it runs on Python and uses Selenium WebDriver with ChromeDriver, the same tools that my group already uses with pytest. Second, our test cases need a staff user and a customer in one test, and Robot Framework can open two browsers with `Open Browser` aliases, while Cypress can control only one browser in a test.
+
+6. (Part 3) I would change only the variable `${MAX CALORIES}` in `resources/quickpizza.resource`. The test file only uses keywords like `Fill In The Pizza Request` and has no locators. So I do not need to change the test file at all.
+
+7. (Part 4) A cookie keeps the browser on one QuickPizza server, and Cypress deletes the cookies before each test. If steps 6 and 7 were a new test, the browser could go to another server, and the admin list would not show my pizza. The new test would also lose `pizzaName` and `@tool`, because they only exist in the first test.

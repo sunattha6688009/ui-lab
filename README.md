@@ -26,7 +26,8 @@ robot -d results/run1 -v BROWSER:headlesschrome pizza_scenario.robot
 Cypress specs. `cypress/e2e/web-form.cy.js` tests Selenium's web form,
 `cypress/e2e/pizza-scenario.cy.js` automates QP-01, and
 `cypress/support/commands.js` holds the custom command `adminLogin`.
-`cypress/videos` and `cypress/screenshots` hold the evidence of a full run.
+`cypress/videos` and `cypress/screenshots` hold the evidence of the last full run,
+and `evidence/run1` and `evidence/run2` keep the screenshots and videos of both runs.
 
 Run from the `cypress` folder:
 

@@ -32,8 +32,8 @@ Tool parts that I chose: Part 3 Robot Framework, Part 4 Cypress
 - Step 4.3, failure message for the wrong title: Timed out retrying after 10000ms, expected 'Web form' to equal 'Web Form' (- 'Web form' actual, + 'Web Form' expected)
 - Step 4.6, tool and calories in the answer of POST /api/pizza: tool Pizza cutter, calories 800
 - Step 4.7, the line of the admin list that shows your pizza: Lab Pizza 20261124-220838 (tool=Scissors, ingredients_number=5)
-- Step 4.8, run 1, result, duration and pizza name: PASS, pizza-scenario.cy.js 00:11 and web-form.cy.js 00:02, Lab Pizza 20261124-xxxxxx
-- Step 4.8, run 2, result, duration and pizza name: PASS, pizza-scenario.cy.js 00:11 and web-form.cy.js 00:04, Lab Pizza 20261124-xxxxxx
+- Step 4.8, run 1, result, duration and pizza name: PASS, pizza-scenario.cy.js 00:27 and web-form.cy.js 00:08, Lab Pizza 20261124-223605
+- Step 4.8, run 2, result, duration and pizza name: PASS, pizza-scenario.cy.js 00:11 and web-form.cy.js 00:02, Lab Pizza 20261124-224200
 
 Note: running both specs in one `npx cypress run --browser chrome` stopped at the start of the second spec with "Error: * is not a valid URL" from inside Cypress 16.2.1 with Chrome 158, so each spec was run on its own.
 
@@ -44,7 +44,7 @@ Note: running both specs in one `npx cypress run --browser chrome` stopped at th
 
 3. The test could check that all the ingredients of the pizza are vegetarian. The page does not show this, but the answer of POST /api/pizza has a `vegetarian` value for each ingredient. In Cypress, the test can read this answer with `cy.wait('@pizza')` and check that every value is true.
 
-4. In Robot Framework I had to write `Wait Until ...` keywords, but Cypress waited by itself for up to 10 seconds. Cypress was faster to write, and one run of QP-01 took about 11 seconds, while Robot Framework took about 16 seconds (15.828 s and 16.274 s). The Robot log showed every step with screenshots, and Cypress made a video, but it stopped with "Error: * is not a valid URL" when I ran both specs together.
+4. In Robot Framework I had to write `Wait Until ...` keywords, but Cypress waited by itself for up to 10 seconds. Cypress was faster to write, and one run of QP-01 took between 11 and 27 seconds, while Robot Framework took about 16 seconds (15.828 s and 16.274 s). The Robot log showed every step with screenshots, and Cypress made a video, but it stopped with "Error: * is not a valid URL" when I ran both specs together.
 
 5. I would choose Robot Framework for Project 2. First, it runs on Python and uses Selenium WebDriver with ChromeDriver, the same tools that my group already uses with pytest. Second, our test cases need a staff user and a customer in one test, and Robot Framework can open two browsers with `Open Browser` aliases, while Cypress can control only one browser in a test.
 
